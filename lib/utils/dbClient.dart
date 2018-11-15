@@ -17,10 +17,10 @@ class DatabaseClient {
     }
   }
 
-  Future create() async{
+  Future<Database> create() async{
     Directory directory = await getApplicationDocumentsDirectory();
     String database_directory = join(directory.path, 'database.db');
-    var bdd = await openDatabase(database_directory, version: 1, onCreate: );
+    var bdd = await openDatabase(database_directory, version: 1, onCreate: null);
     return bdd;
   }
 
@@ -42,6 +42,4 @@ class DatabaseClient {
   }
 
   /* lecture*/
-
-  Future
 }

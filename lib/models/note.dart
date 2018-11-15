@@ -3,7 +3,7 @@ class Note {
   String _title, _description, _date;
 
   Note(this._title, this._date, this._priority, [this._description]);
-  Note.whitId(this._id, this._title, this._date, this._priority,
+  Note.whithId(this._id, this._title, this._date, this._priority,
       [this._description]);
 
   int get id => _id;
@@ -46,6 +46,7 @@ class Note {
     return map;
   }
 
+  // extract a note object
   Note.fromMapObject(Map<String, dynamic> map){
     this._id=map['id'];
     this._title=map['title'];

@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'note_detail.dart';
+import 'dart:async';
+import 'package:notekeeper/models/note.dart';
+import 'package:notekeeper/utils/database_helper.dart';
+import 'package:sqflite/sqflite.dart';
 
 class NoteList extends StatefulWidget {
+
+ 
+
   @override
   NoteListState createState() => new NoteListState();
 }
 
 class NoteListState extends State<NoteList> {
+   DatabaseHelper dbHelper = DatabaseHelper();
+  List<Note> noteList;
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -67,8 +77,8 @@ class NoteListState extends State<NoteList> {
   }
 
   void navigateToDetail(String title) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => new DetailList(title)));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => new DetailList(title)));
   }
 }
 
